@@ -25,3 +25,15 @@ class User(AbstractUser):
         return str(self.username) + " pk: " + str(self.pk)
 
 # Create your models here.
+class Director(models.Model):
+    name = models.CharField(max_length=255)
+
+class Genre(models.Model):
+    name = models.CharField(max_length=255)
+
+class Movie(models.Model):
+    title = models.CharField(max_length=255)
+    directors = models.ManyToManyField(Director , related_name='movies')
+    runtime = models.CharField(max_length=10)
+    year = models.CharField(max_length=10)
+    genres = models.ManyToManyField(Genre, related_name='movies')
