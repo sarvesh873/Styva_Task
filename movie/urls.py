@@ -11,6 +11,4 @@ urlpatterns = [
     path('movies/', MovieCreateView.as_view(), name='movie-list'),
     path('movieslist/', MovieListView.as_view(), name='movie-list'),
     path('search/', MovieSearchAPIView.as_view(), name='movie-search'),
-    # path("profile/", ProfileView.as_view(), name="profile"),
-    # path('logout/', LogoutAPIView.as_view(), name="logout"),
 ]
